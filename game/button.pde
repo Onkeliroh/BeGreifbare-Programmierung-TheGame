@@ -48,14 +48,14 @@ class button
     fill(c,alpha);
     noStroke();
     rect(posx,posy,h,w,edge);
-    textAlign(Centered);
+    textAlign(CENTER);
     textSize(text_size);
     text(text,posx+w/2,posy+h/2);
   }
 
   boolean is_clicked()
   {
-    if is_point_in_rect(mouseX,mouseY,posx,posy,w,h)
+    if (is_point_in_rect(mouseX,mouseY,posx,posy,w,h))
     {
       //TODO hightlight on click
       return true;

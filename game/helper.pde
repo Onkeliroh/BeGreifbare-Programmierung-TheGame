@@ -12,7 +12,7 @@ boolean is_rect_in_triangle(float x_1, float y_1, float w_1, float x_2, float y_
 
 boolean is_point_in_rect(float x1, float y1, float x2, float y2, float w, float h)
 {
-  return (x1 >= x2 && x1 <= x2+w )&&(y1 >= y2 && y1 <= y2+h)
+  return (x1 >= x2 && x1 <= x2+w )&&(y1 >= y2 && y1 <= y2+h);
 }
 
 boolean is_rect_in_line (float x_1, float y_1, float w_1, float x_2, float y_2, float w_2)

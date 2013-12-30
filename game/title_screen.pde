@@ -1,6 +1,6 @@
-class title_screen
+class title_screen extends screen
 {
-  void draw_title_screen()
+  void draw_screen()
   {
     background(title_bg);
 
@@ -12,8 +12,5 @@ class title_screen
     textSize(30);
     textAlign(CENTER);
     text(title,displayWidth/2,40);
-
-
-
   }
 }
