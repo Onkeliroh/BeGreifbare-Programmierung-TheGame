@@ -1,5 +1,7 @@
 class title_screen extends screen
 {
+  int mode = 0;
+  
   void draw_screen()
   {
     background(title_bg);
@@ -12,5 +14,18 @@ class title_screen extends screen
     textSize(30);
     textAlign(CENTER);
     text(title,displayWidth/2,40);
+    
+    //TODO 
+    // button
+    // getter
+  }
+  
+  void send_input(int b)
+  {
+    println(b);
+    switch (b)
+    {
+      case 0: break;
+    }
   }
 }
