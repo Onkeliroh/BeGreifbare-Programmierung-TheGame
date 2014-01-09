@@ -13,3 +13,6 @@
  color stroke_color_headline = color(224,139,47);
 
  color default_button_color = color (255);
+
+ //pics
+ String middle_finger_path = "pic/middle_finger.png";

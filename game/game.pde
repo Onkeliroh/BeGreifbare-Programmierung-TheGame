@@ -17,11 +17,11 @@ void setup()
 {
   size(displayWidth,displayHeight,P2D);
   frameRate(30);
-//  if ( Serial.list().length > 0 )
-//  { 
+  if ( Serial.list().length > 0 )
+  { 
     String portName = Serial.list()[0];
     port = new Serial(this, portName, 9600);
-//  }
+  }
 }
 
 void draw()
