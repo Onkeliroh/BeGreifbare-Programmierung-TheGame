@@ -39,14 +39,8 @@ void debug()
 
 void serialEvent( Serial port )
 {
-  int tmp = port.read();
-  println(tmp);
-  switch ( tmp )
-  {
-    case 48: game_state = 0; break;
-    case 49: game_state = 1; break;
-    case 50: game_state = 2; break;
-  }
+  byte[] tmp = port.readBytes();
+  screens[game_state].send_input(tmp);
 }
 
 void inc_game_state()

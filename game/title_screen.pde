@@ -41,12 +41,7 @@ class title_screen extends screen
     text("MULTIPLAYER",displayWidth/2+250,displayHeight/2+30);
   }
   
-  void send_input(int b)
+  void send_input(byte[] b)
   {
-    println(b);
-    switch (b)
-    {
-      case 0: break;
-    }
   }
 }
