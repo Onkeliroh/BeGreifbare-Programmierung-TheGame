@@ -21,17 +21,20 @@ void loop() {
   int sensorValue3 = analogRead(A3);
   
   if(sensorValue0 != 0){
-    Serial.println("indexFinger");
+    Serial.println(0);
   }
   if(sensorValue1 != 0){
-    Serial.println("middleFinger");
+    Serial.println(1);
   }
   if(sensorValue2 != 0){
-    Serial.println("ringFinger");
+    Serial.println(2);
   }
   if(sensorValue3 != 0){
-    Serial.println("pinky");
+    Serial.println(3);
   }
+  
+  //2 finger combinations
+  
   // print out the value you read:
   //Serial.println(sensorValue);
   delay(100);        // delay in between reads for stability
