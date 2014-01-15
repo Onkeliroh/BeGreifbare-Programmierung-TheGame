@@ -1,14 +1,8 @@
 import processing.serial.*;
 //GLOABL
 
-int game_state = 0;
-
-screen level = new level_screen();
-
-screen[] screens = {
-                    new title_screen(),
-                    level,
-                    new game_over_screen()};  
+int game_state = 0; 
+screen[] screens = new screen[3];
                     
 Serial port;
 
@@ -22,6 +16,10 @@ void setup()
     String portName = Serial.list()[0];
     port = new Serial(this, portName, 9600);
   }
+  
+  screens[0] = new title_screen();
+  screens[1] = new level_screen();
+  screens[2] = new game_over_screen();
 }
 
 void draw()

@@ -1,6 +1,6 @@
 int game_state_count = 3;
 
-String title = "Game of Games";
+String game_title = "Game of Games";
 String game_over_text = "Game Over NOOB";
 
 color title_bg = color(0);
