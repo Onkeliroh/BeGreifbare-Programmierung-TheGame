@@ -7,7 +7,6 @@ class title_screen extends screen
 
   title_screen()
   {
-    println("const");
     middle_finger = loadImage("pic/stinke.png");
     devil_horns = loadImage("pic/rocknroll.png");
   }
@@ -18,12 +17,12 @@ class title_screen extends screen
 
     fill(color(0));
     stroke(stroke_color_headline);
-    rect(displayWidth/2-300,5,600,60,0,0,50,0);
+    //rect(displayWidth/2-300,5,600,60,0,0,50,0);
 
     fill(text_headline_color);
-    textSize(30);
+    textSize(40);
     textAlign(CENTER);
-    text(game_title,displayWidth/2,40);
+    text(game_title,displayWidth/2,displayHeight/3);
   
     
     fill(text_headline_color);
@@ -41,7 +40,13 @@ class title_screen extends screen
     text("MULTIPLAYER",displayWidth/2+250,displayHeight/2+30);
   }
   
-  void send_input(byte[] b)
+  void send_input(int p,int c)
   {
+    if (p == 1)
+      switch (c)
+      {
+        case '1': player_count = 1; inc_game_state(); break;
+        case '2': player_count = 2; inc_game_state(); break; 
+      }
   }
 }

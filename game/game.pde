@@ -1,7 +1,8 @@
 import processing.serial.*;
 //GLOABL
 
-int game_state = 0; 
+int game_state = 0;
+int player_count = 1;
 screen[] screens = new screen[3];
                     
 Serial port;
@@ -10,7 +11,7 @@ Serial port;
 void setup()
 {
   size(displayWidth,displayHeight,P2D);
-  frameRate(30);
+  frameRate(60);
   if ( Serial.list().length > 0 )
   { 
     String portName = Serial.list()[0];
@@ -33,12 +34,6 @@ void draw()
 void debug()
 {
   println("fps: " + frameRate);
-}
-
-void serialEvent( Serial port )
-{
-  byte[] tmp = port.readBytes();
-  screens[game_state].send_input(tmp);
 }
 
 void inc_game_state()
