@@ -1,41 +1,63 @@
-/*
-  AnalogReadSerial
-  Reads an analog input on pin 0, prints the result to the serial monitor.
-  Attach the center pin of a potentiometer to pin A0, and the outside pins to +5V and ground.
- 
- This example code is in the public domain.
- */
-
-// the setup routine runs once when you press reset:
 void setup() {
-  // initialize serial communication at 9600 bits per second:
+  // pins for player1
+  pinMode(12, INPUT);
+  pinMode(11, INPUT);
+  pinMode(10, INPUT);
+  pinMode(9, INPUT);
+  
+  // pins for player2
+  pinMode(2, INPUT);
+  pinMode(3, INPUT);
+  pinMode(4, INPUT);
+  pinMode(5, INPUT);
+  
   Serial.begin(9600);
 }
 
-// the loop routine runs over and over again forever:
 void loop() {
-  // read the input on analog pin 0:
-  int sensorValue0 = analogRead(A0);
-  int sensorValue1 = analogRead(A1);
-  int sensorValue2 = analogRead(A2);
-  int sensorValue3 = analogRead(A3);
+  byte valueOne = B0;    // byte for player1, holds information about the gesture
+  byte valueTwo = B1;    // byte for player2, holds information about the gesture
   
-  if(sensorValue0 != 0){
-    Serial.println(0);
+  int sensorValue1a = digitalRead(12);    //index finger, player1
+  int sensorValue2a = digitalRead(11);    //middle finger, player1
+  int sensorValue3a = digitalRead(10);    //ring finger, player1
+  int sensorValue4a = digitalRead(9);     //little finger, player1
+  
+  int sensorValue4b = digitalRead(2);     //little finger, player2
+  int sensorValue3b = digitalRead(3);     //ring finger, player2
+  int sensorValue2b = digitalRead(4);     //middle finger, player2
+  int sensorValue1b = digitalRead(5);     //index finger, player2
+  
+  //setting gesture for player1
+  if(sensorValue1a == HIGH){
+    valueOne = valueOne | B10;
   }
-  if(sensorValue1 != 0){
-    Serial.println(1);
+  if(sensorValue2a == HIGH){
+    valueOne = valueOne | B100;
   }
-  if(sensorValue2 != 0){
-    Serial.println(2);
+  if(sensorValue3a == HIGH){
+    valueOne = valueOne | B1000;
   }
-  if(sensorValue3 != 0){
-    Serial.println(3);
+  if(sensorValue4a == HIGH){
+    valueOne = valueOne | B10000;
   }
   
-  //2 finger combinations
+  //setting gesture for player2
+  if(sensorValue1b == HIGH){
+    valueTwo = valueTwo | B10;
+  }
+  if(sensorValue2b == HIGH){
+    valueTwo = valueTwo | B100;
+  }
+  if(sensorValue3b == HIGH){
+    valueTwo = valueTwo | B1000;
+  }
+  if(sensorValue4b == HIGH){
+    valueTwo = valueTwo | B10000;
+  }
   
-  // print out the value you read:
-  //Serial.println(sensorValue);
-  delay(100);        // delay in between reads for stability
+  Serial.println(valueOne);
+  Serial.println(valueTwo);
+  
+  delay(500);        // delay in between reads for stability
 }
