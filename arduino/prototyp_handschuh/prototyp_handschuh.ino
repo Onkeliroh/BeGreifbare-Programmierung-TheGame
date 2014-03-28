@@ -56,8 +56,8 @@ void loop() {
     valueTwo = valueTwo | B10000;
   }
   
-  Serial.println(valueOne);
-  Serial.println(valueTwo);
+  Serial.write(valueOne);
+  Serial.write(valueTwo);
   
   delay(500);        // delay in between reads for stability
 }
