@@ -9,8 +9,8 @@ class level_screen extends screen
 	public int current_level = 0;
 	int total_level = 0;
 
-	int p1_input = 0;
-	int p2_input = 0;
+  int p1_input = 0;
+  int p2_input = 0;
  
   level[] levels = { 
 										new level("level/l1_bg.jpg","default lvl 1",28)
@@ -55,7 +55,8 @@ class level_screen extends screen
 		text("TIME",displayWidth/2,30);
 		text(Double.toString(this.level_timer.get_time_sec()),displayWidth/2,60);
 		text("Player 1: " + Integer.toString(p1_score),120,30);
-		text("Player 2: " + Integer.toString(p2_score),120,60);
+		if(player_count >= 2)
+			text("Player 2: " + Integer.toString(p2_score),120,60);
 	}
 
 	void init()
@@ -66,12 +67,15 @@ class level_screen extends screen
 
 	void send_input(int player, int command)
 	{
-		switch ( player )
+		if(player <= player_count)
 		{
-			case 1 : p1_input = command;
-								break;
-			case 2 : p2_input = command;
-								break;
+			switch ( player )
+			{
+				case 1 : p1_input = command;
+									break;
+				case 2 : p2_input = command;
+									break;
+			}
 		}
 	}
 
@@ -91,5 +95,7 @@ class level_screen extends screen
 	void reset()
 	{
 		this.current_level = 0;
+  p1_input = 0;
+  p2_input = 0;
 	}
 }
