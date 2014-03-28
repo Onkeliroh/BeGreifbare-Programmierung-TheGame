@@ -9,32 +9,15 @@ void serialEvent( Serial port )
     int player = 1;
     int tmp = port.last();
   
-//  byte[] tmp = port.readBytes();
-//  byte tmp_byte = tmp[0];
-  
     if((tmp % 2) != 0){
       println("spieler2 mit Geste: " + tmp);
       player = 2;
-      //tmp -= 49;
+      tmp -= 1;
     }else{
-      //tmp -= 48;
       println("spieler1 mit Geste: " + tmp);
     }
     input(player, tmp);
   }
-//  // assumes that the input comes from one of the both possible player
-//  if ((tmp_byte << 7) == 1)
-//  {
-//    player = 2;
-//    tmp_byte = (byte) (tmp_byte &~(1<<7));
-//  }
-//  else 
-//    player = 1;
-//    
-//  //only forewarts input from playing players
-//  if ( player <= player_count ) 
-//    input(player,(int)tmp_byte);
-//  
 }
 
 void input(int p, int key)

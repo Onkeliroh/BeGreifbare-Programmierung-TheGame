@@ -13,7 +13,8 @@ class level_screen extends screen
 	int p2_input = 0;
  
   level[] levels = { 
-										new level("level/l1_bg.jpg","default lvl 1",42)
+										new level("level/l1_bg.jpg","default lvl 1",28)
+          ,new level("level/l2_bg.jpg","default lvl 2",30)
 	};
 
   level_screen()
@@ -81,7 +82,6 @@ class level_screen extends screen
 		println("changing level");
 		if (current_level +1 < total_level )
 		{
-			++current_level;
 			++this.current_level;
 			this.init();
 		}

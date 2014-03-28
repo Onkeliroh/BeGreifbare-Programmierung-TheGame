@@ -44,8 +44,8 @@ class title_screen extends screen
   {
 		switch (c)
 		{
-			case '1': player_count = 1; inc_game_state(); break;
-			case '2': player_count = 2; inc_game_state(); break; 
+			case 26: player_count = 1; inc_game_state(); break;
+			case 12: player_count = 2; inc_game_state(); break; 
 		}
   }
 }

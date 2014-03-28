@@ -29,35 +29,31 @@ void loop() {
   int sensorValue1b = digitalRead(5);     //index finger, player2
   
   //setting gesture for player1
-  if(sensorValue1a == HIGH){
+  if(sensorValue1a == HIGH)
     valueOne = valueOne | B10;
-  }
-  if(sensorValue2a == HIGH){
+  if(sensorValue2a == HIGH)
     valueOne = valueOne | B100;
-  }
-  if(sensorValue3a == HIGH){
+  if(sensorValue3a == HIGH)
     valueOne = valueOne | B1000;
-  }
-  if(sensorValue4a == HIGH){
+  if(sensorValue4a == HIGH)
     valueOne = valueOne | B10000;
-  }
   
   //setting gesture for player2
-  if(sensorValue1b == HIGH){
+  if(sensorValue1b == HIGH)
     valueTwo = valueTwo | B10;
-  }
-  if(sensorValue2b == HIGH){
+  if(sensorValue2b == HIGH)
     valueTwo = valueTwo | B100;
-  }
-  if(sensorValue3b == HIGH){
+  if(sensorValue3b == HIGH)
     valueTwo = valueTwo | B1000;
-  }
-  if(sensorValue4b == HIGH){
+  if(sensorValue4b == HIGH)
     valueTwo = valueTwo | B10000;
-  }
   
-  Serial.write(valueOne);
-  Serial.write(valueTwo);
   
-  delay(500);        // delay in between reads for stability
+  if(valueOne != 0)
+    Serial.write(valueOne);
+  
+  if(valueTwo !=1)
+    Serial.write(valueTwo);
+  
+  delay(50);
 }
