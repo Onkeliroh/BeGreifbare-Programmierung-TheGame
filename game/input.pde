@@ -5,21 +5,23 @@ void keyPressed()
 
 void serialEvent( Serial port )
 {
-  int player = 1;
-  byte[] tmp_array = port.readBytes();
-  int tmp = tmp_array[0];
+  while (port.available() > 0){
+    int player = 1;
+    int tmp = port.last();
   
 //  byte[] tmp = port.readBytes();
 //  byte tmp_byte = tmp[0];
   
-  if((tmp % 2) != 0){
-    player = 2;
-    tmp -= 1;
-    println("spieler2 mit Geste: " + tmp);
-  }else
-    println("spieler1 mit Geste: " + tmp);
-  
-  input(player, tmp);
+    if((tmp % 2) != 0){
+      println("spieler2 mit Geste: " + tmp);
+      player = 2;
+      //tmp -= 49;
+    }else{
+      //tmp -= 48;
+      println("spieler1 mit Geste: " + tmp);
+    }
+    input(player, tmp);
+  }
 //  // assumes that the input comes from one of the both possible player
 //  if ((tmp_byte << 7) == 1)
 //  {
@@ -37,7 +39,7 @@ void serialEvent( Serial port )
 
 void input(int p, int key)
 {
-  //println(key);
+//  println(p, key);
   switch ( key ) 
   {
     case '+': inc_game_state(); break;
