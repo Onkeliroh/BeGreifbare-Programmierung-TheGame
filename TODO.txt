@@ -3,3 +3,5 @@
 - add highscore to game over screen
 - add "restart" to game over screen
 - add score to game
+- name ausdenken
+- farbliche gestalltung ueberarbeiten

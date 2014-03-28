@@ -3,6 +3,8 @@ import processing.serial.*;
 
 int game_state = 0;
 int player_count = 1;
+int p1_score = 0;
+int p2_score = 0;
 screen[] screens = new screen[3];
                     
 Serial port;
@@ -27,7 +29,7 @@ void draw()
 {
   screens[game_state].draw_screen();
  //Uncomment if you don't want basic debugging informations 
- debug();
+ //debug();
 }
 
 
