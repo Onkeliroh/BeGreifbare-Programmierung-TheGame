@@ -60,3 +60,11 @@ void dec_game_state()
 	if ( game_state == 1 )
 		screens[1].init();
 }
+
+void reset_game()
+{
+	this.game_state=0;
+	this.p1_score = 0;
+	this.p2_score = 0;
+	screens[1].reset();
+}

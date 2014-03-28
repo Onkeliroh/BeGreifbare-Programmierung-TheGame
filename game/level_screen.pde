@@ -6,7 +6,7 @@ class level_screen extends screen
 	PImage level_image = new PImage(displayWidth,displayHeight);
   color bgc1 = color(200,0,0);
  
-	int current_level = 0;
+	public int current_level = 0;
 	int total_level = 0;
 
 	int p1_input = 0;
@@ -29,7 +29,6 @@ class level_screen extends screen
 
   void draw_screen()
   {
-//		println("PL1 input: " + p1_input);
 		image(background,0,0);
 
 		if ( total_level > 0 ) // if there is at least on drawable level
@@ -67,7 +66,6 @@ class level_screen extends screen
 
 	void send_input(int player, int command)
 	{
-//		println( "command :" + command);
 		switch ( player )
 		{
 			case 1 : p1_input = command;
@@ -79,7 +77,6 @@ class level_screen extends screen
 
 	void inc_current_level()
 	{
-		println("changing level");
 		if (current_level +1 < total_level )
 		{
 			++this.current_level;
@@ -89,5 +86,10 @@ class level_screen extends screen
 		{
 			game_state = 3;
 		}
+	}
+
+	void reset()
+	{
+		this.current_level = 0;
 	}
 }
