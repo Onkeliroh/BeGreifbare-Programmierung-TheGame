@@ -43,6 +43,7 @@ void input(int p, int key)
     case '+': inc_game_state(); break;
     case '=': inc_game_state(); break;
     case '-': dec_game_state(); break;
+		case 'h': screens[game_state].send_input(p,42); break;
     default: screens[game_state].send_input(p, key);
   }
 }

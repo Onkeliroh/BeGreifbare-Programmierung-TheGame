@@ -10,6 +10,7 @@ class level
   {
     this.background = loadImage(bg);
     this.background.resize(displayWidth,displayHeight);
+		this.success_trigger = trigger;
     println("Level constructor done");
   }
 

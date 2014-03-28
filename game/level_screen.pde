@@ -28,6 +28,7 @@ class level_screen extends screen
 
   void draw_screen()
   {
+//		println("PL1 input: " + p1_input);
 		image(background,0,0);
 
 		if ( total_level > 0 ) // if there is at least on drawable level
@@ -65,6 +66,7 @@ class level_screen extends screen
 
 	void send_input(int player, int command)
 	{
+//		println( "command :" + command);
 		switch ( player )
 		{
 			case 1 : p1_input = command;
