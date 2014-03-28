@@ -44,6 +44,9 @@ void inc_game_state()
     ++game_state;
    else
     println("Trying to increment game_state. FAILED!!!");
+
+	if ( game_state == 1 )
+		screens[1].init();
 }
 
 void dec_game_state()

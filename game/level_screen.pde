@@ -24,14 +24,12 @@ class level_screen extends screen
     }   
 		
 		this.total_level = levels.length;
-
-		//initital initialization
-		init_level();
   }
 
   void draw_screen()
   {
 		image(background,0,0);
+
 		if ( total_level > 0 ) // if there is at least on drawable level
 		{
 			image(this.level_image,level_offset_x,level_offset_y);
@@ -41,14 +39,17 @@ class level_screen extends screen
 				inc_game_state();	
 			}
 		}
-	
-	//TODO insert timer, player scoreboard  
 
+		//draw timer and scores
+		text("TIME",displayWidth/2,30);
+		text(Double.toString(this.level_timer.get_time_sec()),displayWidth/2,60);
+		text("Player 1: " + Integer.toString(p1_score),120,30);
+		text("Player 2: " + Integer.toString(p2_score),120,60);
 	}
 
-	void init_level()
+	void init()
 	{
-		this.level_timer.restart();
+		this.level_timer.start();
 		this.level_image = levels[current_level].draw_level();
 	}
 
@@ -56,9 +57,9 @@ class level_screen extends screen
 	{
 		switch ( player )
 		{
-			case 0 : p1_input = command;
+			case 1 : p1_input = command;
 								break;
-			case 1 : p2_input = command;
+			case 2 : p2_input = command;
 								break;
 		}
 	}
