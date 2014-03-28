@@ -1,5 +1,5 @@
 import processing.serial.*;
-//GLOABL
+//GLOBAL
 
 int game_state = 0;
 int player_count = 1;
