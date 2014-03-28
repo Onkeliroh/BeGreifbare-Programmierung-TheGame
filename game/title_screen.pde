@@ -42,11 +42,10 @@ class title_screen extends screen
   
   void send_input(int p,int c)
   {
-    if (p == 1)
-      switch (c)
-      {
-        case '1': player_count = 1; inc_game_state(); break;
-        case '2': player_count = 2; inc_game_state(); break; 
-      }
+		switch (c)
+		{
+			case '1': player_count = 1; inc_game_state(); break;
+			case '2': player_count = 2; inc_game_state(); break; 
+		}
   }
 }

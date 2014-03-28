@@ -2,6 +2,7 @@ class game_over_screen extends screen
 {
   void draw_screen()
   {
+		//TODO replace background with proper image (looks nicer)
     background(game_over_bg);
 
     fill(text_headline_color);

@@ -9,7 +9,7 @@ void serialEvent( Serial port )
   byte[] tmp = port.readBytes();
   byte tmp_byte = tmp[0];
   
-  // assumes thate the input comes from one of the both possible player
+  // assumes that the input comes from one of the both possible player
   if ((tmp_byte << 7) == 1)
   {
     player = 2;

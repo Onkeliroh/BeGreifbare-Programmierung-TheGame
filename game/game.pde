@@ -27,7 +27,7 @@ void draw()
 {
   screens[game_state].draw_screen();
  //Uncomment if you don't want basic debugging informations 
- //debug();
+ debug();
 }
 
 
