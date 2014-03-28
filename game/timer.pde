@@ -31,17 +31,17 @@ class timer
 		this.run = false;
 	}	
 	
-	int get_time_msec()
+	double get_time_msec()
 	{
 		if ( this.run )
-			return (int)Math.round( millis() - this.start_time );
+			return ( millis() - this.start_time );
 		else
 			return 0;
 	}
 
-	int get_time_sec()
+	double get_time_sec()
 	{
-		return (int)( this.get_time_msec() / 1000 );
+		return ( this.get_time_msec() / 1000 );
 	}
 
 	boolean finished()

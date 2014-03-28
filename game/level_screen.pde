@@ -13,7 +13,7 @@ class level_screen extends screen
 	int p2_input = 0;
  
   level[] levels = { 
-										new level("level/l1_bg.jpg","default lvl 1",1000)
+										new level("level/l1_bg.jpg","default lvl 1",42)
 	};
 
   level_screen()
@@ -36,7 +36,17 @@ class level_screen extends screen
 			if ( this.level_timer.finished() )
 			{
 				println("Timer finished");
-				inc_game_state();	
+				game_state = 2;	
+			}
+			if ( this.p1_input == this.levels[current_level].success_trigger )
+			{
+				++p1_score;
+				this.inc_current_level();
+			}
+			else if ( this.p2_input == this.levels[current_level].success_trigger )
+			{
+				++p2_score;
+				this.inc_current_level();
 			}
 		}
 
@@ -61,6 +71,21 @@ class level_screen extends screen
 								break;
 			case 2 : p2_input = command;
 								break;
+		}
+	}
+
+	void inc_current_level()
+	{
+		println("changing level");
+		if (current_level +1 < total_level )
+		{
+			++current_level;
+			++this.current_level;
+			this.init();
+		}
+		else
+		{
+			game_state = 3;
 		}
 	}
 }
