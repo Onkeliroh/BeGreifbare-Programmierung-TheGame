@@ -7,8 +7,8 @@ class title_screen extends screen
 
   title_screen()
   {
-    middle_finger = loadImage("pic/stinke.png");
-    devil_horns = loadImage("pic/rocknroll.png");
+    middle_finger = loadImage("pic/middle_finger2.png");
+    devil_horns = loadImage("pic/devil_horns2.png");
   }
   
   void draw_screen()
@@ -28,16 +28,16 @@ class title_screen extends screen
     fill(text_headline_color);
     textSize(30);
     textAlign(CENTER);
-    text("SINGLEPLAYER",displayWidth/2-250,displayHeight/2+30);
+    text("SINGLEPLAYER",displayWidth/2-250,displayHeight/2+118);
 
-    image(middle_finger,(displayWidth/2-250)-64,displayHeight/2+40,128,128);
-    image(devil_horns,(displayWidth/2+250)-64,displayHeight/2+40,128,128);
+    image(middle_finger,(displayWidth/2-250)-64,displayHeight/2-40,128,128);
+    image(devil_horns,(displayWidth/2+250)-64,displayHeight/2-40,128,128);
 
 
     fill(text_headline_color);
     textSize(30);
     textAlign(CENTER);
-    text("MULTIPLAYER",displayWidth/2+250,displayHeight/2+30);
+    text("MULTIPLAYER",displayWidth/2+250,displayHeight/2+118);
   }
   
   void send_input(int p,int c)

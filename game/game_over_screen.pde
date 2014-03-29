@@ -20,7 +20,7 @@ class game_over_screen extends screen
 
 	void send_input(int player , int command)
 	{
-		if ( command == 12 ) 
+		if ( command == INDEX_FINGER ) 
 			reset_game();
 	}
 }

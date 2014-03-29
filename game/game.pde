@@ -7,6 +7,20 @@ int p1_score = 0;
 int p2_score = 0;
 screen[] screens = new screen[4];
                     
+//Single finger values
+int INDEX_FINGER = 2;
+int MIDDLE_FINGER = 4;
+int RING_FINGER = 8;
+int LITTLE_FINGER = 16;
+
+//Gesture values
+int DEVIL_HORNS = 12;
+int MOBILE = 14;
+int SCISSORS = 24;
+int F_YOU = 26;
+int PISTOL = 28;
+int FIST = 30;
+
 Serial port;
 
 

@@ -13,8 +13,8 @@ class level_screen extends screen
   int p2_input = 0;
  
   level[] levels = { 
-										new level("level/l1_bg.jpg","default lvl 1",28)
-          ,new level("level/l2_bg.jpg","default lvl 2",30)
+			new level("level/l1_bg.jpg","default lvl 1", PISTOL)
+			,new level("level/l2_bg.jpg","default lvl 2", FIST)
 	};
 
   level_screen()
