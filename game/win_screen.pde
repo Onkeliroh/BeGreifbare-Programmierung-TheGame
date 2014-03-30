@@ -1,16 +1,15 @@
 class win_screen extends screen
 {
-  void draw_screen()
-  {
-		//TODO replace background with proper image (looks nicer)
-    background(win_bg);
+	void draw_screen()
+	{
+		background(win_bg);
 
-    fill(text_headline_color);
-    textSize(30);
-    textAlign(CENTER);
-    text(win_text,displayWidth/2,displayHeight/2-100);
+		fill(text_color_1);
+		textSize(30);
+		textAlign(CENTER);
+		text(win_text,displayWidth/2,displayHeight/2-100);
 
-		fill(black);
+		fill(BLACK);
 		if ( (p1_score < p2_score) && (player_count>1))
 		{
 			text("PLAYER 2 WINS",displayWidth/2,displayHeight/2);

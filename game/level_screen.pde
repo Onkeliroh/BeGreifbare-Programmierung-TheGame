@@ -2,34 +2,27 @@ class level_screen extends screen
 {
 	private timer level_timer = new timer(10000);
 
-	PImage background = new PImage(displayWidth,displayHeight);
-	PImage level_image = new PImage(displayWidth,displayHeight);
-  color bgc1 = color(200,0,0);
+	private	PImage level_image = new PImage(displayWidth,displayHeight);
  
 	public int current_level = 0;
-	int total_level = 0;
+	private int total_level = 0;
 
-  int p1_input = 0;
-  int p2_input = 0;
+	private int p1_input = 0;
+	private int p2_input = 0;
  
-  level[] levels = { 
+	private  level[] levels = { 
 			new level("level/l1_bg.jpg","default lvl 1", PISTOL)
 			,new level("level/l2_bg.jpg","default lvl 2", FIST)
 	};
 
   level_screen()
   {
-    for (int px = 0 ; px < background.width*background.height ; ++px)
-    {
-      this.background.pixels[px] = bgc1;
-    }   
-		
 		this.total_level = levels.length;
   }
 
   void draw_screen()
   {
-		image(background,0,0);
+		background(WHITE);
 
 		if ( total_level > 0 ) // if there is at least on drawable level
 		{
@@ -52,6 +45,7 @@ class level_screen extends screen
 		}
 
 		//draw timer and scores
+		fill(text_color_2);
 		text("TIME",displayWidth/2,30);
 		text(Double.toString(this.level_timer.get_time_sec()),displayWidth/2,60);
 		text("Player 1: " + Integer.toString(p1_score),120,30);

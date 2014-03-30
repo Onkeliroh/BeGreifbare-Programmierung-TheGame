@@ -44,6 +44,11 @@ class timer
 		return ( this.get_time_msec() / 1000 );
 	}
 
+	double get_time_left_sec()
+	{
+		return ( durration / 1000 ) - ( this.get_time_msec() / 1000 ) 
+	}
+
 	boolean finished()
 	{
 		if ( this.run )

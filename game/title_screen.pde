@@ -15,29 +15,25 @@ class title_screen extends screen
   {
     background(title_bg);
 
-    fill(color(0));
-    stroke(stroke_color_headline);
-    //rect(displayWidth/2-300,5,600,60,0,0,50,0);
-
-    fill(text_headline_color);
+    fill(text_color_1);
     textSize(40);
     textAlign(CENTER);
     text(game_title,displayWidth/2,displayHeight/3);
   
     
-    fill(text_headline_color);
+    fill(text_color_1);
     textSize(30);
     textAlign(CENTER);
-    text("SINGLEPLAYER",displayWidth/2-250,displayHeight/2+118);
+    text(singleplayer.toUpperCase(),displayWidth/2-250,displayHeight/2+118);
 
     image(middle_finger,(displayWidth/2-250)-64,displayHeight/2-40,128,128);
     image(devil_horns,(displayWidth/2+250)-64,displayHeight/2-40,128,128);
 
 
-    fill(text_headline_color);
+    fill(text_color_1);
     textSize(30);
     textAlign(CENTER);
-    text("MULTIPLAYER",displayWidth/2+250,displayHeight/2+118);
+    text(multiplayer.toUpperCase(),displayWidth/2+250,displayHeight/2+118);
   }
   
   void send_input(int p,int c)
