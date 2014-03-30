@@ -1,7 +1,3 @@
-- "game over" bild durch ein schoenes ersetzen\
-- evtl. tastenbelegung bei start aus geben oder ein bild einbauen
-- add highscore to game over screen
-- add "restart" to game over screen
+- "game over" bild durch ein schoenes ersetzen
 - farbliche gestalltung ueberarbeiten
-- "sieg" screen bauen
 - timer auf eine stelle nach dem komma runden
