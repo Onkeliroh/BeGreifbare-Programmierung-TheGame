@@ -46,6 +46,8 @@ class level_screen extends screen
 
 		//draw timer and scores
 		fill(text_color_2);
+    textSize(30);
+    textAlign(CENTER);
 		text("TIME",displayWidth/2,30);
 		text(Double.toString(this.level_timer.get_time_sec()),displayWidth/2,60);
 		text("Player 1: " + Integer.toString(p1_score),120,30);

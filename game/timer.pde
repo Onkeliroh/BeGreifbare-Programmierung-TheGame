@@ -46,7 +46,7 @@ class timer
 
 	double get_time_left_sec()
 	{
-		return ( durration / 1000 ) - ( this.get_time_msec() / 1000 ) 
+		return ( this.durration_time / 1000 ) - ( this.get_time_msec() / 1000 );
 	}
 
 	boolean finished()
