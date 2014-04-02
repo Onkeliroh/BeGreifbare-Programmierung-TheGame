@@ -1,4 +1,5 @@
 import processing.serial.*;
+import ddf.minim.*;
 //GLOBAL
 
 int game_state = 0;
@@ -7,8 +8,10 @@ int p1_score = 0;
 int p2_score = 0;
 screen[] screens = new screen[4];
                     
-Serial port;
+Minim minim;
+Audioplayer player;
 
+Serial port;
 
 void setup()
 {
@@ -24,6 +27,10 @@ void setup()
   screens[1] = new level_screen();
   screens[2] = new game_over_screen();
   screens[3] = new win_screen();
+
+	minim = new Minim(this);
+	player = minim.loadFile("sound/bup_bedee.wav");
+	player.loop();
 }
 
 void draw()
