@@ -9,7 +9,7 @@ int p2_score = 0;
 screen[] screens = new screen[4];
                     
 Minim minim;
-Audioplayer player;
+AudioPlayer player;
 
 Serial port;
 
