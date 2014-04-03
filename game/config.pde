@@ -8,7 +8,8 @@ public color BLACK = color(0,0,0);
 public color WHITE = color(255,255,255);
 
 // -----Strings-----
-public String game_title = "G.E.G.";
+public String game_title1 = "Project G.E.G.";
+public String game_title2 = "Gesture Enhanced Game";
 public String game_over_text = "Game Over";
 public String win_text = "<3-lichen Glueckwunsch. Du hast gewonnen.";
 public String singleplayer = "Einzelspieler";

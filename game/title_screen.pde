@@ -18,8 +18,8 @@ class title_screen extends screen
     fill(text_color_1);
     textSize(40);
     textAlign(CENTER);
-    text(game_title,displayWidth/2,displayHeight/3);
-  
+    text(game_title1,displayWidth/2,displayHeight/3);
+    text(game_title2,displayWidth/2,displayHeight/3);
     
     fill(text_color_1);
     textSize(30);
