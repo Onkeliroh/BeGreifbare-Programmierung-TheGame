@@ -5,7 +5,7 @@ class game_over_screen extends screen
 		//TODO replace background with proper image (looks nicer)
     background(game_over_bg);
 
-    fill(text_color_2);
+    fill(text_color_1);
     textSize(30);
     textAlign(CENTER);
     text(game_over_text,displayWidth/2,displayHeight/2);
@@ -16,6 +16,7 @@ class game_over_screen extends screen
 		text("Player 1: " + p1_score,displayWidth/2 - 470,displayHeight/2+130);
 		if (player_count > 1)
 			text("Player 2: " + p2_score,displayWidth/2 - 470,displayHeight/2+160);
+		text("Only use the index finger to go back to the startscreen", displayWidth/2 - 470,displayHeight/2+220);
   }
 
 	void send_input(int player , int command)
