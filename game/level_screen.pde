@@ -49,7 +49,7 @@ class level_screen extends screen
 			}
 			else
 			{	
-				background(BLACK);
+				background(WHITE);
 				delay(2000);
 				image(this.levels[this.current_level].success,
 							this.levels[this.current_level].image_offset_x,

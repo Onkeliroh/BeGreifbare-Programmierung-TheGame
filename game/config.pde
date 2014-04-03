@@ -1,7 +1,7 @@
 // -----Level Config-----
 public	String level_pic_location = "level/";
-public	int level_offset_x = 20;
-public	int level_offset_y = 20;
+public	int level_offset_x = 80;
+public	int level_offset_y = 80;
 
 // -----Colors-----
 public color BLACK = color(0,0,0);
