@@ -1,18 +1,18 @@
 class level_screen extends screen
 {
 	private timer level_timer = new timer(10000);
-
-	private	PImage level_image = new PImage(displayWidth,displayHeight);
  
 	public int current_level = 0;
 	private int total_level = 0;
+	private boolean level_state = false;
 
 	private int p1_input = 0;
 	private int p2_input = 0;
  
-	private  level[] levels = { 
-			new level("level/l1_bg.jpg","default lvl 1", PISTOL)
-			,new level("level/l2_bg.jpg","default lvl 2", FIST)
+	private  level[] levels = {
+							// 1.do-picture, 2.solved-pic, 3.action 
+			new level("level/l1_bg.jpg","level/l1_bg.jpg", PISTOL),
+			new level("level/l2_bg.jpg","level/l2_bg.jpg", FIST)
 	};
 
   level_screen()
@@ -26,21 +26,31 @@ class level_screen extends screen
 
 		if ( total_level > 0 ) // if there is at least on drawable level
 		{
-			image(this.level_image,level_offset_x,level_offset_y);
-			if ( this.level_timer.finished() )
+			if ( !this.level_state )
 			{
-				println("Timer finished");
-				game_state = 2;	
+				image(this.levels[this.current_level].background,level_offset_x,level_offset_y);
+				if ( this.level_timer.finished() )
+				{
+				//	println("Timer finished");
+					game_state = 2;	//game-over
+				}
+				if ( this.p1_input == this.levels[current_level].success_trigger )
+				{
+					++p1_score;
+					this.level_state = !this.level_state;
+				}
+				else if ( this.p2_input == this.levels[current_level].success_trigger )
+				{
+					++p2_score;
+					this.level_state = !this.level_state;
+				}
 			}
-			if ( this.p1_input == this.levels[current_level].success_trigger )
-			{
-				++p1_score;
-				this.inc_current_level();
-			}
-			else if ( this.p2_input == this.levels[current_level].success_trigger )
-			{
-				++p2_score;
-				this.inc_current_level();
+			else
+			{	
+				image(this.levels[this.current_level].success,level_offset_x,level_offset_y);
+				//text
+				//delay
+								
 			}
 		}
 
@@ -58,7 +68,6 @@ class level_screen extends screen
 	void init()
 	{
 		this.level_timer.start();
-		this.level_image = levels[current_level].draw_level();
 	}
 
 	void send_input(int player, int command)
