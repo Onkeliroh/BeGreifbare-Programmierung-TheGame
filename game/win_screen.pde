@@ -9,7 +9,7 @@ class win_screen extends screen
 		textAlign(CENTER);
 		text(win_text,displayWidth/2,displayHeight/2-100);
 
-		fill(BLACK);
+		fill(text_color_1);
 		if ( (p1_score < p2_score) && (player_count>1))
 		{
 			text("PLAYER 2 WINS",displayWidth/2,displayHeight/2);

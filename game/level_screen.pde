@@ -1,6 +1,7 @@
 class level_screen extends screen
 {
 	private timer level_timer = new timer(10000);
+	private timer level_succes_timer = new timer(3000);
  
 	public int current_level = 0;
 	private int total_level = 0;
@@ -28,6 +29,9 @@ class level_screen extends screen
   void draw_screen()
   {
 		background(WHITE);
+		fill(text_color_2);
+    textSize(30);
+    textAlign(CENTER);
 
 		if ( total_level > 0 ) // if there is at least on drawable level
 		{
@@ -36,47 +40,44 @@ class level_screen extends screen
 				image(this.levels[this.current_level].background,
 							this.levels[this.current_level].image_offset_x,
 							this.levels[this.current_level].image_offset_y);
+				text("TIME",displayWidth/2,30);
+				text(Double.toString((int)this.level_timer.get_time_left_sec()),displayWidth/2,60);
+				
 				if ( this.level_timer.finished() )
 				{
 				//	println("Timer finished");
 					game_state = 2;	//game-over
 				}
-				if ( this.p1_input == this.levels[current_level].success_trigger )
+				else 
 				{
-					++p1_score;
-					this.level_state = !this.level_state;
-				}
-				else if ( this.p2_input == this.levels[current_level].success_trigger )
-				{
-					++p2_score;
-					this.level_state = !this.level_state;
+					if ( this.p1_input == this.levels[current_level].success_trigger )
+					{
+						++p1_score;
+						this.level_state = !this.level_state;
+						this.level_succes_timer.restart();
+					}
+					else if ( this.p2_input == this.levels[current_level].success_trigger )
+					{
+						++p2_score;
+						this.level_state = !this.level_state;
+						this.level_succes_timer.restart();
+					}
 				}
 			}
-			else
+			else if ( !this.level_succes_timer.finished() && this.level_state )
 			{	
-				background(WHITE);
-				delay(2000);
 				image(this.levels[this.current_level].success,
 							this.levels[this.current_level].image_offset_x,
 							this.levels[this.current_level].image_offset_y);
-
-				textAlign(LEFT);
-				textSize(20);
-				text("Player 1: " + p1_score,displayWidth/2 - 470,displayHeight/2+130);
-				if (player_count > 1)
-					text("Player 2: " + p2_score,displayWidth/2 - 470,displayHeight/2+160);
-
-				delay(2000);
-								
+			//	println("draw");
+			}
+			else if ( this.level_succes_timer.finished() && this.level_state )
+			{
+				this.inc_current_level();
 			}
 		}
 
 		//draw timer and scores
-		fill(text_color_2);
-    textSize(30);
-    textAlign(CENTER);
-		text("TIME",displayWidth/2,30);
-		text(Double.toString((int)this.level_timer.get_time_left_sec()),displayWidth/2,60);
 		text("Player 1: " + Integer.toString(p1_score),120,30);
 		if(player_count >= 2)
 			text("Player 2: " + Integer.toString(p2_score),120,60);
@@ -85,6 +86,9 @@ class level_screen extends screen
 	void init()
 	{
 		this.level_timer.start();
+		this.level_state = false;
+		this.p1_input = 0;
+		this.p2_input = 0;
 	}
 
 	void send_input(int player, int command)
