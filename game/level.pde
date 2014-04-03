@@ -5,7 +5,7 @@ class level
 	
 	private int success_trigger = -1;
 
-	private int img_width = this.calc_img_width;
+	private int img_width = this.calc_img_width();
 	private int img_height = this.calc_img_height();
 
   public	int image_offset_x = (displayWidth - img_width)/2;
@@ -21,15 +21,17 @@ class level
 //    println("Level constructor done");
   }
 
-	void calc_img_width()
+	int calc_img_width()
 	{
 		int width_ratio = (displayWidth - (level_offset_x *2))/16;
 		width_ratio = width_ratio *16;
+		return width_ratio;
 	}
 
-	void calc_img_height()
+	int calc_img_height()
 	{
 		int height_ratio = (displayHeight - (level_offset_y *2))/9;
 		height_ratio = height_ratio *9;
+		return height_ratio;
 	}
 }  
