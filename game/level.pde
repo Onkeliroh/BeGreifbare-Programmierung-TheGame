@@ -10,7 +10,7 @@ class level
   level(String bg, String suc, int trigger )
   {
     this.background = loadImage(bg);
-    this.background.resize(displayWidth- (level_offset_x * 2), displayHeight-(level_offset_y * 2));
+    this.background.resize(displayWidth- img_width, displayHeight- img_height);
     this.success = loadImage(suc);
     this.success.resize(displayWidth- (level_offset_x * 2), displayHeight-(level_offset_y * 2));
 		this.success_trigger = trigger;
