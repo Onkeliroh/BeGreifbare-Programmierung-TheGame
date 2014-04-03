@@ -14,9 +14,9 @@ class level
 	level(String bg, String suc, int trigger )
   {
     this.background = loadImage(bg);
-    this.background.resize(displayWidth- img_width, displayHeight- img_height);
+    this.background.resize(img_width, img_height);
     this.success = loadImage(suc);
-    this.success.resize(displayWidth- img_width, displayHeight- img_height);
+    this.success.resize(img_width, img_height);
 		this.success_trigger = trigger;
 //    println("Level constructor done");
   }
