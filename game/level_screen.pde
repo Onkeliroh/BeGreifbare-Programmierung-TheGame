@@ -11,7 +11,7 @@ class level_screen extends screen
  
 	private  level[] levels = {
 							// 1.do-picture, 2.solved-pic, 3.action 
-			new level("level/l1_bg.jpg","level/l1_bg.jpg", PISTOL),
+			new level("level/Cowboy_1.png","level/Cowboy_2.png", PISTOL),
 			new level("level/l2_bg.jpg","level/l2_bg.jpg", FIST)
 	};
 
