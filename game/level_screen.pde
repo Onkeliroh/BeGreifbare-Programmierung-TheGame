@@ -28,7 +28,7 @@ class level_screen extends screen
 		{
 			if ( !this.level_state )
 			{
-				image(this.levels[this.current_level].background,level_offset_x,level_offset_y);
+				image(this.levels[this.current_level].background,image_offset_x,image_offset_y);
 				if ( this.level_timer.finished() )
 				{
 				//	println("Timer finished");
@@ -49,7 +49,7 @@ class level_screen extends screen
 			{	
 				background(BLACK);
 				delay(2000);
-				image(this.levels[this.current_level].success,level_offset_x,level_offset_y);
+				image(this.levels[this.current_level].success,image_offset_x,image_offset_y);
 
 				textAlign(LEFT);
 				textSize(20);
