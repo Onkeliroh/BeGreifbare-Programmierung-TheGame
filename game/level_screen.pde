@@ -16,7 +16,7 @@ class level_screen extends screen
 			new level("level/HoldesWeib_1.png","level/HoldesWeib_2.png", SCISSORS),
 			new level("level/Kackhaufen_1.png","level/Kackhaufen_2.png", F_YOU),
 			new level("level/Telefon_1.png","level/Telefon_2.png", MOBILE),
-			new level("level/Engel1.png","level/Engel_2.png", DEVIL_HORNS),
+			new level("level/Engel_1.png","level/Engel_2.png", DEVIL_HORNS),
 			new level("level/Fernseher_1.png","level/Fernseher_2.png", FIST),
 			new level("level/Nase_1.png","level/Nase_2.png", PISTOL)
 	};
