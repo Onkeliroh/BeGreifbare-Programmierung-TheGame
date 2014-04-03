@@ -47,9 +47,17 @@ class level_screen extends screen
 			}
 			else
 			{	
+				background(BLACK);
+				delay(2000);
 				image(this.levels[this.current_level].success,level_offset_x,level_offset_y);
-				//text
-				//delay
+
+				textAlign(LEFT);
+				textSize(20);
+				text("Player 1: " + p1_score,displayWidth/2 - 470,displayHeight/2+130);
+				if (player_count > 1)
+					text("Player 2: " + p2_score,displayWidth/2 - 470,displayHeight/2+160);
+
+				delay(2000);
 								
 			}
 		}
